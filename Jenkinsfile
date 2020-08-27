@@ -1,8 +1,5 @@
 pipeline {
   agent any
-   tools {
-    maven 'maven'
-  }
   stages {
     stage('build') {
       steps {
@@ -22,11 +19,14 @@ pipeline {
       steps {
         echo 'this is the package job'
         sh 'mvn package -DskipTests'
+        archiveArtifacts '**/target/*.jar'
       }
     }
 
   }
- 
+  tools {
+    maven 'maven'
+  }
   post {
     always {
       echo 'this pipeline has completed...'

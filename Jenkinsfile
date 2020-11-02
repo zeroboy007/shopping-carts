@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'lagairogo/carts-maven'
+    }
+
+  }
   stages {
     stage('build') {
       steps {

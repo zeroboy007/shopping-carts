@@ -18,7 +18,7 @@ pipeline{
         stage('test'){
             steps{
                 echo 'this is the test job'
-                sh 'mvn test'
+                sh 'mvn clean test'
             }
         }
         stage('package'){
@@ -35,16 +35,10 @@ pipeline{
         }
         
     }
+<<<<<<< HEAD:Jenkinsfile
     
+=======
+
+  }
+>>>>>>> 456c002d9a827223dbd63b0ec71f7678a755c6b8:Jenkinsfile-template
 }
-
-
-
-
-
-
-
-
-
-
-

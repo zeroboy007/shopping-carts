@@ -22,9 +22,9 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
-        archiveArtifacts '**/distribution/*.zip'
+        archiveArtifacts '**/target/*.jar'
       }
     }
 
